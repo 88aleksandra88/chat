@@ -12,7 +12,7 @@
 
 ↪ [Gerardo Cella](https://github.com/GerardoCella7)  
 ↪ [Aleksandra Slowik](https://github.com/88aleksandra88)  
-↪ [Stéphan Kalonji](https://github.com/kalonjis)  
+↪ [Stéphane Kalonji](https://github.com/kalonjis)  
 ↪ [John Laterre](https://github.com/epictete)
 
 ## The mission
