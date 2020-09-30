@@ -1,4 +1,4 @@
-# chat 
+# chat
 
 <img src="https://raw.githubusercontent.com/yoavain/create-windowless-app/master/resources/docs/logo.gif">
 
@@ -10,7 +10,10 @@
 
 ## Collaborators:
 
-
+↪ [Gerardo Cella](https://github.com/GerardoCella7)  
+↪ [Aleksandra Slowik](https://github.com/88aleksandra88)  
+↪ [Stéphan Kalonji](https://github.com/kalonjis)  
+↪ [John Laterre](https://github.com/epictete)
 
 ## The mission
 
@@ -33,7 +36,7 @@
 
 - Allow user to edit or delete their messages
 
-- Make it the most beautiful chat ever 
+- Make it the most beautiful chat ever
 
 - Add other features as you wish...
 
