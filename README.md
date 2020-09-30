@@ -8,7 +8,7 @@
 
 - Team challenge: 4
 
-## Collaborators:
+## Collaborators
 
 ↪ [Gerardo Cella](https://github.com/GerardoCella7)  
 ↪ [Aleksandra Slowik](https://github.com/88aleksandra88)  
