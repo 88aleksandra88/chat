@@ -3,6 +3,8 @@ const http = require("http");
 const express = require("express");
 const socketio = require("socket.io");
 const mongoose = require("mongoose");
+const connectDB = require("./db");
+const Message = require("./models/Message");
 const formatMessage = require("./utils/messages");
 const {
     userJoin,
@@ -15,19 +17,8 @@ const app = express();
 const server = http.createServer(app);
 const io = socketio(server);
 
-mongoose
-    .connect(
-        "mongodb+srv://dev123:dev123@epictete.ahqdx.mongodb.net/chat?retryWrites=true&w=majority",
-        { useNewUrlParser: true, useUnifiedTopology: true }
-    )
-    .then(() => console.log("Connected to MongoDB"))
-    .catch(err => console.log(err));
-
-const Message = mongoose.model("Message", {
-    username: { type: String, required: true },
-    text: { type: String, required: true },
-    time: { type: String, required: true },
-});
+// Connect to MongoDB
+connectDB();
 
 // Set static folder
 app.use(express.static(path.join(__dirname, "public")));
