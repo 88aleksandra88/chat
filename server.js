@@ -5,9 +5,7 @@ const router = express.Router();
 const socketio = require("socket.io");
 const connectDB = require("./db");
 const chat = require("./utils/chat");
-
 const userRoutes = require("./routes/user");
-const { urlencoded } = require("express");
 
 const app = express();
 const server = http.createServer(app);

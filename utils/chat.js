@@ -8,7 +8,7 @@ const Message = require("../models/Message");
 const formatMessage = require("./messages");
 const chatBot = require("../server");
 
-const message = (socket, io, msg) => {
+exports.message = (socket, io, msg) => {
     const user = getCurrentUser(socket.id);
     const message = new Message(formatMessage(user.username, msg));
 
