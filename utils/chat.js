@@ -7,7 +7,11 @@ const {
 const Message = require("../models/Message");
 const formatMessage = require("./messages");
 
-exports.message = ( socket, io, msg) => {
+const {
+    chatBot
+} = require("../server");
+
+exports.message = (socket, io, msg) => {
     const user = getCurrentUser(socket.id);
     const message = new Message(formatMessage(user.username, msg));
 
@@ -15,7 +19,7 @@ exports.message = ( socket, io, msg) => {
     io.to(user.room).emit("output", [message]);
 }
 
-exports.disconnect = (socket, io, chatBot) => {
+exports.disconnect = (socket, io) => {
     const user = userLeave(socket.id);
 
     if (user) {
@@ -33,7 +37,7 @@ exports.disconnect = (socket, io, chatBot) => {
     }
 }
 
-exports.joinRoom = (socket, io, username, room, chatBot) => {
+exports.joinRoom = (socket, io, username, room) => {
     const user = userJoin(socket.id, username, room);
 
     socket.join(user.room);

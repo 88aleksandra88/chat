@@ -21,15 +21,19 @@ const chatBot = "ChatCord Bot";
 
 // Run when client connects
 io.on("connection", socket => {
-    socket.on("joinRoom", ({ username, room }) =>chat.joinRoom(socket, io, username, room, chatBot) );
+
+    socket.on("joinRoom", ({ username, room }) =>chat.joinRoom(socket, io, username, room) );
 
     // Listen for chatMessage
     socket.on("chatMessage", msg => chat.message(socket, io, msg));
 
     // Runs when client disconnects
-    socket.on("disconnect", () => chat.disconnect(socket, io, chatBot));
+    socket.on("disconnect", () => chat.disconnect(socket, io));
 });
 
 const PORT = process.env.PORT || 3000;
 
 server.listen(PORT, () => console.log(`Server running on port ${PORT}`));
+
+
+exports.chatBot = chatBot;
