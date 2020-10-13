@@ -1,11 +1,11 @@
 const path = require("path");
 const http = require("http");
 const express = require("express");
+const router = express.Router();
 const socketio = require("socket.io");
-const mongoose = require("mongoose");
 const connectDB = require("./db");
-
 const chat = require("./utils/chat");
+const userRoutes = require("./routes/user");
 
 const app = express();
 const server = http.createServer(app);
@@ -14,8 +14,14 @@ const io = socketio(server);
 // Connect to MongoDB
 connectDB();
 
+app.use(express.json());
+app.use(express.urlencoded({ extended: false }));
+
 // Set static folder
 app.use(express.static(path.join(__dirname, "public")));
+
+// Set routes
+app.use("/auth", userRoutes);
 
 const chatBot = "ChatCord Bot";
 

@@ -17,7 +17,7 @@ exports.message = (socket, io, msg) => {
 
     message.save();
     io.to(user.room).emit("output", [message]);
-}
+};
 
 exports.disconnect = (socket, io) => {
     const user = userLeave(socket.id);
@@ -35,7 +35,7 @@ exports.disconnect = (socket, io) => {
             users: getRoomUsers(user.room),
         });
     }
-}
+};
 
 exports.joinRoom = (socket, io, username, room) => {
     const user = userJoin(socket.id, username, room);
@@ -51,9 +51,7 @@ exports.joinRoom = (socket, io, username, room) => {
         .catch(err => console.log(err));
 
     // Welcome current user
-    const welcome = new Message(
-        formatMessage(chatBot, "Welcome to ChatCord!")
-    );
+    const welcome = new Message(formatMessage(chatBot, "Welcome to ChatCord!"));
     socket.emit("output", [welcome]);
 
     // Broadcast when a user connects
@@ -68,4 +66,4 @@ exports.joinRoom = (socket, io, username, room) => {
         room: user.room,
         users: getRoomUsers(user.room),
     });
-}
+};
